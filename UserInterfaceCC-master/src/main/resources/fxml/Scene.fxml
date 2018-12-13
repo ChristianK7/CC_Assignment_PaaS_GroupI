@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="585" minWidth="480" xmlns:fx="http://javafx.com/fxml" fx:controller="cc.paas.userinterface.FXMLController">   
+    <top>
+        <Label alignment="TOP_CENTER" id="Headline" maxWidth="Infinity" text="Crack Me In The Cloud"></Label>
+    </top>
+    <center>
+        <VBox alignment="CENTER" maxWidth="Infinity" spacing="25">
+            <children>
+                <HBox alignment="BOTTOM_CENTER">
+                <VBox fx:id="dragTargetDIC" minWidth="300"
+                      onDragOver="#handleDragOverDIC" onDragDropped="#handleDragDroppedDIC">
+                    <children>
+                        <Label minHeight="16" minWidth="69" fx:id="labelDIC" text="Drop dictionary" />                
+                        <Label fx:id="successLabelDIC" minHeight="16" minWidth="69" text="" />
+                    </children>
+                </VBox>
+                <!--<Button alignment="BOTTOM_LEFT"
+                        text="Choose file" onAction="#handleButtonActionDIC" fx:id="buttonDIC" />-->
+                        
+                <VBox fx:id="dragTargetEAPOL" minWidth="300"
+                      onDragOver="#handleDragOverEAPOL" onDragDropped="#handleDragDroppedEAPOL">
+                    <children>
+                        <Label minHeight="16" minWidth="69" fx:id="labelEAPOL" text="Drop eapolinfo" />                
+                        <Label fx:id="successLabelEAPOL" minHeight="16" minWidth="69" text="" />
+                    </children>
+                </VBox>
+                <!--<Button alignment="BOTTOM_LEFT"
+                        text="Choose file" onAction="#handleButtonActionEAPOL" fx:id="buttonEAPOL" />-->
+                </HBox>
+                
+                <HBox alignment="BOTTOM_CENTER" maxWidth="Infinity" spacing="5">
+                    <Button fx:id="UploadButton" text="Upload" onAction="#Upload" minHeight="50" minWidth="60"/>
+                    <ProgressBar fx:id="progressBar" minWidth="300" minHeight="50"/>
+                </HBox>
+                <Label fx:id="passwordLabel" minHeight="16" minWidth="69" text="Password: Not found yet" />
+            </children>
+        </VBox>
+    </center>
+    <bottom>
+        <BorderPane id="upload">
+            <right>        
+                <HBox>
+                    <Button text="Help" minHeight="50" minWidth="60" onAction="#Help"/> 
+                    <Button text="Exit" minHeight="50" minWidth="60" onAction="#Exit"/> 
+                </HBox>
+            </right>
+        </BorderPane> 
+    </bottom>
+</BorderPane>
